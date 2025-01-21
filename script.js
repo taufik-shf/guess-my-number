@@ -91,7 +91,8 @@ const checkGuess = () => {
   } else {
     score = 0;
     document.querySelector(".score").textContent = score;
-    displayMessage("😭 You Lose the Game");
+    gameNumber.textContent = secretNumber;
+    displayMessage("😭 You Lose");
     bodyElement.style.backgroundColor = "#e03131";
     gameActive = false; // Set game status to inactive
   }
