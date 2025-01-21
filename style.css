@@ -161,6 +161,16 @@ a {
   margin-bottom: 3rem;
 }
 
+#difficulty {
+  position: absolute;
+  left: 0;
+  transform: translate(20%, -20%);
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border: none;
+}
+
 /* Effect */
 
 @keyframes shake {

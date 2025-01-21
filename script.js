@@ -23,9 +23,35 @@ const displayMessage = (message) => {
 
 // Initialize Game Variables
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
-let highScore = 0;
-let gameActive = true; // Add a flag to track game status
+let score;
+let maxGuesses;
+let gameActive = true;
+// Object to store high scores for each difficulty
+const highScores = {
+  2: 0, // God
+  5: 0, // Hard
+  10: 0, // Normal
+  15: 0, // Beginner
+};
+
+// Function to set the difficulty
+const setDifficulty = () => {
+  const difficulty = document.getElementById("difficulty").value;
+  maxGuesses = Number(difficulty);
+  score = maxGuesses;
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".highscore").textContent = highScores[difficulty];
+};
+
+// Set initial difficulty to 'Beginner' (15 guesses)
+document.getElementById("difficulty").value = "15";
+setDifficulty();
+
+// Event listener for difficulty change
+document.getElementById("difficulty").addEventListener("change", () => {
+  setDifficulty();
+  resetGame(); // Reset game when difficulty changes
+});
 
 // Function to check the guess
 const checkGuess = () => {
@@ -40,9 +66,12 @@ const checkGuess = () => {
       bodyElement.style.backgroundColor = "rgb(96, 179, 71)";
       gameNumber.style.width = "40rem";
       gameNumber.style.fontSize = "8rem";
-      if (score > highScore) {
-        highScore = score;
-        document.querySelector(".highscore").textContent = highScore;
+      const difficulty = document.getElementById("difficulty").value;
+      if (score > highScores[difficulty]) {
+        highScores[difficulty] = score;
+        document.querySelector(
+          ".highscore"
+        ).textContent = `${score} / ${maxGuesses}`;
       }
       gameActive = false; // Set game status to inactive
     } else {
@@ -60,13 +89,14 @@ const checkGuess = () => {
     document.querySelector(".score").textContent = score;
     displayMessage("😭 You Lose the Game");
     bodyElement.style.backgroundColor = "#e03131";
+    gameActive = false; // Set game status to inactive
   }
 };
 
 // Function to reset the game
 const resetGame = () => {
   gameActive = true;
-  score = 20;
+  score = maxGuesses;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector(".score").textContent = score;
   document.querySelector(".guess").value = "";
@@ -77,6 +107,14 @@ const resetGame = () => {
   gameNumber.style.fontSize = originalStyles.gameNumberFontSize;
 };
 
+// Initialize Display Values
+document.querySelector(".score").textContent = score;
+
 // Event Listeners
 document.querySelector(".check").addEventListener("click", checkGuess);
 document.querySelector(".again").addEventListener("click", resetGame);
+guessInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    checkGuess(); // Trigger the guess check when Enter key is pressed
+  }
+});
