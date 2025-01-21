@@ -3,6 +3,8 @@
 ## Description
 This GitHub repo is a simple mini project to practice DOM manipulation using JavaScript. To make it more engaging, I added styles to the HTML to enhance my HTML and CSS skills. The goal was to make the HTML accessible for everyone and responsive to any device using media queries.
 
+**You can play the game [here](https://taufik-shf.github.io/guess-my-number/).**
+
 ## Features
 - Multiple difficulty levels: Beginner, Normal, Hard, God.
 - High score tracking for each difficulty level.
