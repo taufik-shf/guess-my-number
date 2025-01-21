@@ -11,33 +11,54 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Guess my number - minigames</title>
+    <title>Guess my number - Minigame</title>
+    <meta
+      name="description"
+      content="Play the Guess My Number minigame! Guess the number between 1 and 20 and see if you can beat your high score."
+    />
   </head>
   <body>
     <header class="header">
       <div class="header-container">
-        <nav>
-          <select id="difficulty">
+        <nav aria-label="Main navigation">
+          <label for="difficulty" class="visually-hidden">Difficulty</label>
+          <select
+            id="difficulty"
+            name="difficulty"
+            aria-label="Select difficulty level"
+          >
             <option value="15">Beginner</option>
             <option value="10">Normal</option>
             <option value="5">Hard</option>
             <option value="2">God</option>
           </select>
-          <button class="btn again">Again!</button>
+          <button class="btn again" aria-label="Start a new game">
+            Again!
+          </button>
         </nav>
         <h1 class="game-header">Guess my number!</h1>
         <p class="game-instruction">(between 1 and 20)</p>
-        <div class="game-number">?</div>
+        <div class="game-number" aria-live="polite">?</div>
       </div>
     </header>
     <main class="main">
-      <section class="game-input">
-        <input type="number" class="guess" min="1" max="20" />
-        <button class="btn check">Check!</button>
+      <section class="game-input" aria-labelledby="game-input-header">
+        <h2 class="visually-hidden">Game Input</h2>
+        <label for="guess" class="visually-hidden">Enter your guess</label>
+        <input
+          type="number"
+          id="guess"
+          class="guess"
+          min="1"
+          max="20"
+          aria-label="Enter your guess"
+        />
+        <button class="btn check" aria-label="Check your guess">Check!</button>
       </section>
-      <section class="game-result">
-        <p class="message">Start guessing...</p>
-        <p class="label-score">💯 Guess: <span class="score">15</span></p>
+      <section class="game-result" aria-labelledby="game-result-header">
+        <h2 class="visually-hidden">Game Result</h2>
+        <p class="message" aria-live="polite">Start guessing...</p>
+        <p class="label-score">🔍 Guess: <span class="score">15</span></p>
         <p class="label-highscore">
           🥇 Highscore: <span class="highscore">0</span>
         </p>
