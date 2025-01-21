@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess my number - minigames</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="game-header">Guess my number</h1>
+      <p class="game-instruction">(between 1 and 20)</p>
+    </header>
+    <input type="number" id="guess" min="1" max="20" />
+    <button id="submit-guess">Submit</button>
+    <p id="message"></p>
+    <p>Attempts: <span id="attempts">0</span></p>
+    <button id="reset-game">Reset Game</button>
+  </body>
+</html>
