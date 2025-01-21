@@ -43,6 +43,12 @@ const setDifficulty = () => {
   document.querySelector(".highscore").textContent = highScores[difficulty];
 };
 
+// Function to update high score display
+const updateHighScoreDisplay = (difficulty) => {
+  document.querySelector(
+    ".highscore"
+  ).textContent = `${highScores[difficulty]} / ${maxGuesses}`;
+};
 // Set initial difficulty to 'Beginner' (15 guesses)
 document.getElementById("difficulty").value = "15";
 setDifficulty();
@@ -69,9 +75,7 @@ const checkGuess = () => {
       const difficulty = document.getElementById("difficulty").value;
       if (score > highScores[difficulty]) {
         highScores[difficulty] = score;
-        document.querySelector(
-          ".highscore"
-        ).textContent = `${score} / ${maxGuesses}`;
+        updateHighScoreDisplay(difficulty);
       }
       gameActive = false; // Set game status to inactive
     } else {
@@ -105,6 +109,10 @@ const resetGame = () => {
   bodyElement.style.backgroundColor = originalStyles.backgroundColor;
   gameNumber.style.width = originalStyles.gameNumberWidth;
   gameNumber.style.fontSize = originalStyles.gameNumberFontSize;
+  const difficulty = document.getElementById("difficulty").value;
+  if (highScores[difficulty]) {
+    updateHighScoreDisplay(difficulty);
+  }
 };
 
 // Initialize Display Values
