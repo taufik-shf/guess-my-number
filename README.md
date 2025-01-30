@@ -1,24 +1,41 @@
-# Guess My Number - Minigame
+# 🎮 Guess My Number - Mini Game
+**A simple yet engaging number guessing game built with HTML, CSS, and JavaScript**
+Practice project for DOM manipulation and responsive design
 
-## Description
-This GitHub repo is a simple mini project to practice DOM manipulation using JavaScript. With HTML and CSS i try to make it more engaging, and make sure its accessible for everyone and responsive to any device using media queries.
+## 🚀 Overview
+Guess My Number is a mini game where players guess a randomly generated number within a specified range. Built as a practice project to master DOM manipulation and responsive design, this game features multiple difficulty levels, a high score tracker, and interactive feedback for players.
+
 
 **You can play the game [here](https://taufik-shf.github.io/guess-my-number/).**
 
-## Features
-- Multiple difficulty levels: Beginner, Normal, Hard, God.
-- High score tracking for each difficulty level.
-- Shake effect for incorrect guesses and visual cues for winning and losing.
-- Responsive design for an optimal user experience on all devices.
-- Accessible design with screen reader support.
+-----
+## 🎯 Core Gameplay
+#### Multiple Difficulty Levels:
+- Beginner (15 Guesses)
+- Normal (10 Guesses)
+- Hard (5 Guesses)
+- God (2 Guesses)
+#### High Score Tracker: Tracks the best score for each difficulty level.
+#### Interactive Feedback: Visual cues (shake effect, color changes) for incorrect guesses, wins, and losses.
+#### Design & Accessibility
+- Responsive Design: Works seamlessly on all devices (desktop, tablet, mobile).
+- Accessible UI: Screen reader support and keyboard-friendly controls.
+#### Technical Highlights
+- DOM Manipulation: Dynamically updates content and styles based on user input.
+- Event Handling: Supports both button clicks and keyboard input (Enter key).
+- Game Logic: Random number generation, guess validation, and state management.
+<br>
 
-## Usage
-1. Select a difficulty level.
-2. Enter your guess and click "Check!" or press the "Enter" key.
-3. The game will provide feedback on whether your guess is too high, too low, or correct.
-4. Click "Again!" to start a new game.
+## 🎮 How to Play
+1. Select a Difficulty Level: Choose from Beginner, Normal, Hard, or God mode.
+2. Enter Your Guess: Type your guess in the input field.
+3. Get Feedback: The game will tell you if your guess is too high, too low, or correct.
+4. Win or Lose: Keep guessing until you find the correct number or run out of attempts.
+5. Play Again: Click "Again!" to start a new game with the same difficulty.
 
-## DOM Manipulation
+<br>
+
+## 💡 What I Learned
 In this project, I practiced the following DOM manipulation techniques:
 - Selecting and manipulating DOM elements.
 - Handling user input and events.
